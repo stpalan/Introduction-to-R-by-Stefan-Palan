@@ -2,6 +2,23 @@
 title       : Simple plots
 description : This chapter will cover how to create simple plots.
 ---
+
+## Welcome to the chapter
+
+```yaml
+type: VideoExercise
+key: 8cd65a68f5
+lang: r
+xp: 50
+skills: 1
+video_link: https://player.vimeo.com/video/281432673
+#vimeo.com/user87654438/review/281432673/f255f4ca14
+```
+
+
+---
+
+
 ## Your first plot in R
 
 ```yaml
@@ -16,9 +33,8 @@ Now that you understand variables and data structures in R, it is time we starte
 
 
 `@instructions`
-I have created a vector called `EvenNumbers`, which contains the values 0, 2, 4, 6, 8 and 10. Don't believe me? Type `EvenNumbers` to check!
-
-You should now try to plot the contents of `EvenNumbers`. To do so, simply type `plot(EvenNumbers)` and see what happens!
+  * I have created a vector called `EvenNumbers`, which contains the values 0, 2, 4, 6, 8 and 10. Don't believe me? Type `EvenNumbers` to check!
+  * You should now try to plot the contents of `EvenNumbers`. To do so, simply type `plot(EvenNumbers)` and see what happens!
 
 `@hint`
 First type `EvenNumbers`, then type `plot(EvenNumbers)`. Make sure you capitalize the E and the N in `EvenNumbers`. Then run your code!
@@ -51,7 +67,6 @@ test_function("plot", incorrect_msg = "You have forgotten to plot EvenNumbers!")
 success_msg("Excellent, your first R plot! R has taken the contents of `EvenNumbers` and plotted it on the vertical axis, using a simple index (running from 1 to 6, for the six numbers in `EvenNumbers`) for the horizontal axis.")
 ```
 
----
 ## Preparing a 'grid' for a plot
 
 ```yaml
@@ -69,7 +84,7 @@ To do that, we first need to create the *grid*, i.e., the x-coordinates over whi
 We will let `x` run from 0 to two times pi (yes, the same pi we use to calculate the area of a circle). Why two times pi? Because that will give us one full sine wave.
 
 `@instructions`
-Assign the numbers 0, 0.1, 0.2, ..., 2*pi to `x` .
+  * Assign the numbers 0, 0.1, 0.2, ..., 2*pi to `x` .
 
 `@hint`
 You can use the `seq()` function to generate a sequence of numbers. Specifying the `from`, `to`, and `by` arguments lets you control the starting point, end point, and step width of the sequence.
@@ -102,7 +117,7 @@ success_msg("Good job, now we are ready to calculate the sine of `x`!")
 
 ```yaml
 type: NormalExercise
-key: be054abd8f
+key: 9476388da9
 lang: r
 xp: 100
 skills: 1
@@ -111,7 +126,7 @@ skills: 1
 Now that you have prepared our `x` variable, it is time to calculate the sine of `x`.
 
 `@instructions`
-Calculate the sine of each value in `x` using the `sin()` function. Then assign the outcome to a variable called `y`.Assign to `x` the numbers 0, 0.1, 0.2, ..., 2*pi.
+  * Calculate the sine of each value in `x` using the `sin()` function. Then assign the outcome to a variable called `y`.
 
 `@hint`
 Calculate and save in `y` the outcome of `sin(x)`.
@@ -146,7 +161,7 @@ success_msg("Good work! Your highschool teacher would be proud of you!")
 
 ```yaml
 type: NormalExercise
-key: 4fbd2e161f
+key: 9476388da9
 lang: r
 xp: 100
 skills: 1
@@ -155,7 +170,7 @@ skills: 1
 Now that we have the `x` and `y` coordinates of our sine wave, let's actually plot it!
 
 `@instructions`
-Use the `plot()` function to plot the sine wave. The first two arguments of the function are the x and y coordinates (in this order) of whatever you want to plot.
+  * Use the `plot()` function to plot the sine wave. The first two arguments of the function are the x and y coordinates (in this order) of whatever you want to plot.
 
 `@hint`
 # Plot the sine wave, sending both the x and the y variables to the `plot()` function. The first argument of the function (the first variable name within the brackets) will be interpreted as the x-coordinate, the second as the y-coordinate.
@@ -199,7 +214,7 @@ While it is nice to see that sine function plot, nobody plots continuous functio
 To change the appeareance of a plot, we can add *options* to the plot function call. These are additional parameters, telling R how to format the plot output. Here, we want R to format your data as a line instead of as individual dots. You do this by specifying the `type` parameter as `type="l"`. Note that this is a lower case "L" in the quotes, not the number "one". 
 
 `@instructions`
-I have already prepared this step for you in the script window. Simply run this piece of code.
+  * I have already prepared this step for you in the script window. Simply run this piece of code.
 
 `@hint`
 The solution in this case is already prepared for you and you just need to submit it.
@@ -233,7 +248,7 @@ success_msg("Very nice - this looks like a proper graph of a sine wave!")
 
 ```yaml
 type: NormalExercise
-key: 6359fd5ea1
+key: 4429362060
 lang: r
 xp: 100
 skills: 1
@@ -289,7 +304,7 @@ skills: 1
 We will soon add another plot to our graph. If we do so and again use a black, thin line, it will be hard to distinguish the two plots. So before we add another plot, let's make the sine wave a bit more distinctive by assigning it a color.
 
 `@instructions`
-R offers a number of different ways to specify colors. One of them is simply to use one of several pre-defined color names. By assigning a color to our line (in this case "red"), we can cause it to turn red. The relevant parameter in the `plot` function is `col`.
+  * R offers a number of different ways to specify colors. One of them is simply to use one of several pre-defined color names. By assigning a color to our line (in this case "red"), we can cause it to turn red. The relevant parameter in the `plot` function is `col`.
 
 `@hint`
 Using `col="blue"` makes the line turn blue. Can you now make the line red?
@@ -325,7 +340,7 @@ success_msg("You did it!")
 
 ```yaml
 type: NormalExercise
-key: 8b27bd3657
+key: c740f8f7a3
 lang: r
 xp: 100
 skills: 1
@@ -334,7 +349,7 @@ skills: 1
 The sine wave looks smooth and the color will help distinguish it from the next plot we will add. However, the line would be easier to see if it were a bit thicker. So before we go on, let's make the sine wave a bit more distinctive by increasing line width.
 
 `@instructions`
-We can specify the parameter `lwd` to assign a line width to our sine function plot to make it somewhat bolder and more distinctive. The default width is 1. How about setting it to 4 instead?
+  * We can specify the parameter `lwd` to assign a line width to our sine function plot to make it somewhat bolder and more distinctive. The default width is 1. How about setting it to 4 instead?
 
 `@hint`
 Using `lwd=2` sets the line's width to 2. Can you now make the line width 4?
@@ -380,7 +395,7 @@ skills: 1
 Now that we have a nice plot of the sine function, let's add a cosine function for contrast. To do so, we first need to calculate the cosine.
 
 `@instructions`
-We need to calculate the results of the cosine function, `cos()`, evaluated at every element of `x`. Remember that for the sine function, we used `y<-sin(x)`. Can you now do it for the cosine function?
+  * We need to calculate the results of the cosine function, `cos()`, evaluated at every element of `x`. Remember that for the sine function, we used `y<-sin(x)`. Can you now do it for the cosine function?
 
 `@hint`
 You calculated the sine function using `sin(x)` and assigned it to the variable `x` using the line of code `x <- sin(x)`. Now do the same for the cosine function `cos()` and the variable `z`.
@@ -414,7 +429,7 @@ success_msg("Very good - now we are set to add a second plot to our graph!")
 
 ```yaml
 type: NormalExercise
-key: 9726d43d8a
+key: 9146d0b9e5
 lang: r
 xp: 100
 skills: 1
@@ -423,7 +438,7 @@ skills: 1
 Now that we have calculated the cosine, let's add it to our plot. If we simply used `plot()`, this would create a new plot that would contain *only* the cosine plot, not the sine plot as well. To add a new line to an existing plot, we need the function `lines()`. This function takes the same arguments as `plot()`, yet we do not need to specify the title and axis labels a second time. Making it blue will set it off nicely from the sine function.
 
 `@instructions`
-The sample code already contains the correct solution. Make sure you study the solution before submitting it, to understand what we have done.
+  * The sample code already contains the correct solution. Make sure you study the solution before submitting it, to understand what we have done.
 
 *Note that here on datacamp, you always need to execute the entire plot-related code at once, since otherwise the later function `lines()` does not have a plot to refer to. Thus, always highlight everything from `plot(...)` down to the line you are working on before pressing <CTRL>-<ENTER> to test your code.*
 
@@ -532,7 +547,7 @@ As a final flourish, let's add a reference line at y = 0 to the plot.
 Using the `abline()` function lets us quickly draw horizontal or vertical reference lines. We can specify either version by using the `h = Y` or the `v = X` options, where `X` and `Y` stand for the x- and y- coordinate where the line should be positioned. To make the line a little less prominent, we should also specify the line type by using `lty=2` and coloring it gray.
 
 `@instructions`
-Use the `abline()` function with the arguments `h`, `lty` and `col` to draw a gray, broken, horizontal line at y = 0.
+  * Use the `abline()` function with the arguments `h`, `lty` and `col` to draw a gray, broken, horizontal line at y = 0.
 
 *Note that here on datacamp, you always need to execute the entire plot-related code at once, since otherwise the later functions (`lines()`, `legend()`, `abline()`) do not have a plot to refer to. Thus, always highlight everything from `plot(...)` down to the line you are working on before pressing <CTRL>-<ENTER> to test your code.*
 
