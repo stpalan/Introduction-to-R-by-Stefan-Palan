@@ -102,7 +102,7 @@ success_msg("Good job, now we are ready to calculate the sine of `x`!")
 
 ```yaml
 type: NormalExercise
-key: 9476388da9
+key: be054abd8f
 lang: r
 xp: 100
 skills: 1
@@ -146,7 +146,7 @@ success_msg("Good work! Your highschool teacher would be proud of you!")
 
 ```yaml
 type: NormalExercise
-key: 9476388da9
+key: 4fbd2e161f
 lang: r
 xp: 100
 skills: 1
@@ -233,7 +233,7 @@ success_msg("Very nice - this looks like a proper graph of a sine wave!")
 
 ```yaml
 type: NormalExercise
-key: 4429362060
+key: 6359fd5ea1
 lang: r
 xp: 100
 skills: 1
@@ -325,7 +325,7 @@ success_msg("You did it!")
 
 ```yaml
 type: NormalExercise
-key: c740f8f7a3
+key: 8b27bd3657
 lang: r
 xp: 100
 skills: 1
@@ -414,7 +414,7 @@ success_msg("Very good - now we are set to add a second plot to our graph!")
 
 ```yaml
 type: NormalExercise
-key: 9146d0b9e5
+key: 9726d43d8a
 lang: r
 xp: 100
 skills: 1
