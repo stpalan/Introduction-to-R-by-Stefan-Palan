@@ -45,6 +45,9 @@ plot(EvenNumbers)
 
 `@sct`
 ```{r}
+test_error()
+test_output_contains("EvenNumbers", incorrect_msg = "You have not displayed the contents of `EvenNumbers`. Make sure you do so under the first instruction.")
+test_function("plot", incorrect_msg = "You have forgotten to plot EvenNumbers!")
 success_msg("Excellent, your first R plot! R has taken the contents of `EvenNumbers` and plotted it on the vertical axis, using a simple index (running from 1 to 6, for the six numbers in `EvenNumbers`) for the horizontal axis.
 
 Now - despite this success, you are not happy with how the figure looks? Well, let's see about that in the next exercise ...")
@@ -99,11 +102,16 @@ plot(x, y)
 
 `@sct`
 ```{r}
+test_function("sin", incorrect_msg = "You need to use the `sin()` function to calculate the sine of `x`!")
+#test_function("plot", incorrect_msg = "You need to use the `plot()` function to plot your sine wave!")
+test_object("y", incorrect_msg = "Something is wrong with `y`. Make sure you've assigned the sine of x to the variable.")
+test_function("plot", args = c("x", "y"))
+#test_output_contains("plot(x,y)", incorrect_msg = "You have not correctly plotted the sine wave. Make sure you specify both the `x` and the `y` coordinate in the `plot()` function.")
 success_msg("Good work! Your highschool teacher would be proud of you!")
 ```
 
 ---
-## Changing plot format and adding labels
+## Changing plot format
 
 ```yaml
 type: NormalExercise
@@ -113,17 +121,15 @@ xp: 100
 skills: 1
 ```
 
-While it is nice to see that sine function plot, nobody plots continuous functions using separate dots. Let's use a continuous line instead, why don't we? And while we're at it, we should add a title and particularly axis labels to your plot - remember how your highschool teacher used to nag you about those?
+While it is nice to see that sine function plot, nobody plots continuous functions using separate dots. Let's use a continuous line instead, why don't we?
 
 `@instructions`
 To change the appeareance of a plot, we can add *options* to the plot function call. These are additional parameters, telling R how to format the plot output.
 
-Let's start by telling R to format your data as a line instead of as individual dots. You do this by specifying the `type` parameter as `type="l"`. Note that this is a lower case "L" in the quotes, not the number "one". I have already prepared this for you in the script window. Put your cursor into the first line of code and hit <CTRL>-<ENTER> to run this piece of code.
-
-Once you have done this, add a figure title and axis labels to your plot using the options `main`, `xlab` and `ylab`.
+Here, we want R to format your data as a line instead of as individual dots. You do this by specifying the `type` parameter as `type="l"`. Note that this is a lower case "L" in the quotes, not the number "one". I have already prepared this for you in the script window. Put your cursor into the first line of code and hit <CTRL>-<ENTER> to run this piece of code.
 
 `@hint`
-You can add the title and axis label options by using the argument name and assigning it a value. For the plot title, this would look as follows: `main="Sine wave"`.
+The solution in this case is already prepared for you and you just need to submit it.
 
 `@pre_exercise_code`
 ```{r}
@@ -135,20 +141,65 @@ y <- sin(x)
 ```{r}
 plot(x, y, type = "l") #Plots y over x as a line graph
 
-# Now add a main title "Sine wave", an x-axis label "X" and a y-axis label "sin(X)" to your plot. Complete the following line of code (don't forget to close the brackets!):
+```
+
+`@solution`
+```{r}
+plot(x, y, type = "l")
+```
+
+`@sct`
+```{r}
+test_function("plot", args = c("x", "y", "type"))
+
+success_msg("Very nice - this looks like a proper graph of a sine wave!")
+```
+
+---
+## Adding labels
+
+```yaml
+type: NormalExercise
+key: 4429362060
+lang: r
+xp: 100
+skills: 1
+```
+
+Now that our plot looks like a proper sine wave, we should add a title and particularly axis labels to your plot - remember how your highschool teacher used to nag you about those?
+
+`@instructions`
+Add a graph title and axis labels to your plot.
+  * Add the graph title "Sine wave", using the option `main`
+  * Add a label "X" for the horizontal axis, using the option `xlab`
+  * Add a label "sin(X)" for the vertical axis, using the option `ylab`
+
+`@hint`
+You can add the title and axis label options by using the argument name and assigning it a value. For the plot title, this would look as follows: `main = "Sine wave"`.
+
+`@pre_exercise_code`
+```{r}
+x <- seq(from = 0, by = 0.1, to = 2 * pi)
+y <- sin(x)
+```
+
+`@sample_code`
+```{r}
+# Add a main title "Sine wave", an x-axis label "X" and a y-axis label "sin(X)" to your plot. Complete the following line of code (don't forget to close the brackets!):
 plot(x, y, type = "l", 
 
 ```
 
 `@solution`
 ```{r}
-plot(x, y, type = "l")
 plot(x, y, type = "l", main = "Sine wave", xlab = "X", ylab = "sin(X)")
 ```
 
 `@sct`
 ```{r}
-success_msg("Very nice - this looks like a proper graph of a sine wave!")
+test_function("plot", args = c("x","y","type", "main","xlab","ylab"))
+
+success_msg("Good job, your highschool teacher would be proud of you!")
 ```
 
 ---
@@ -183,19 +234,21 @@ y <- sin(x)
 #Modify the plot function call to plot the line in red and test it by selecting the below line and pressing <CTRL>-<ENTER>
 plot(x, y, type = "l", main = "Sine wave", xlab = "X", ylab = "sin(X)")
 
-#Modify the plot function call from above to also make the line width equal 4
+#Now go back and modify the plot function call from above to also make the line width equal 4
 
 
 ```
 
 `@solution`
 ```{r}
-plot(x, y, type = "l", main = "Sine wave", xlab = "X", ylab = "sin(X)", col="red")
+#plot(x, y, type = "l", main = "Sine wave", xlab = "X", ylab = "sin(X)", col="red")
 plot(x, y, type = "l", main = "Sine wave", xlab = "X", ylab = "sin(X)", col="red", lwd=4)
 ```
 
 `@sct`
 ```{r}
+test_function("plot", args = c("x","y","type", "main","xlab","ylab","col","lwd"))
+
 success_msg("Excellent, this looks beautiful!")
 ```
 
@@ -252,6 +305,9 @@ lines(x, z, type = "l", col = "blue", lwd = 4)
 
 `@sct`
 ```{r}
+test_function("plot", args = c("x","y","type", "main","xlab","ylab","col","lwd"))
+test_function("lines", args = c("x","y","type", "col","lwd"))
+test_object("z")
 success_msg("Awesome, this is quite the plot already!")
 ```
 
@@ -271,10 +327,10 @@ Once you have more than one plot in your graph, it is good practice to use a leg
 `@instructions`
 Drawing a legend in R requires the use of the `legend()`function. Now this function requires multiple pieces of information to produce what we want it to.
 
-1. Where we want the legend to go in the graph. We tell R by specifying the coordinates the upper left corner of the legend should be positioned. In this case: `legend(pi, 1 ...`
-2. The labels of the different elements shown in the legend. In this case, our two functions, i.e.: `legend(pi, 1, c("sin(X)", "cos(X)") ...`. Note that we use the `c()` function to combine the two texts into a vector.
-3. The colors of the lines to be drawn. In this case: `legend(pi, 1, c("sin(X)", "cos(X)"), col=c("red", "blue") ...`
-4. The line width of the lines to be drawn. In this case: `legend(pi, 1, c("sin(X)", "cos(X)"), col=c("red", "blue"), lwd=4)`
+1. Where we want the legend to go in the graph. We tell R by specifying the coordinates the upper left corner of the legend should be positioned. In this case: `legend(x=pi, y=1 ...`
+2. The labels of the different elements shown in the legend. In this case, our two functions, i.e.: `legend(x=pi, y=1, legend=c("sin(X)", "cos(X)") ...`. Note that we use the `c()` function to combine the two texts into a vector.
+3. The colors of the lines to be drawn. In this case: `legend(x=pi, y=1, legend=c("sin(X)", "cos(X)"), col=c("red", "blue") ...`
+4. The line width of the lines to be drawn. In this case: `legend(x=pi, y=1, legend=c("sin(X)", "cos(X)"), col=c("red", "blue"), lwd=4)`
 
 Phew, sounds a bit complicated, but you can always use this legend as a reference for future work.
 
@@ -294,7 +350,7 @@ plot(x, y, type = "l", main = "Sine and cosine", xlab = "X", ylab = "sin(X) and 
 lines(x, z, type = "l", col = "blue", lwd = 4)
 
 #Study and run the below line of code to add a legend to the plot
-legend(pi, 1, c("sin(X)", "cos(X)"), col=c("red", "blue"), lwd=4)
+legend(x=pi, y=1, legend=c("sin(X)", "cos(X)"), col=c("red", "blue"), lwd=4)
 
 ```
 
@@ -307,6 +363,10 @@ legend(pi, 1, c("sin(X)", "cos(X)"), col=c("red", "blue"), lwd=4)
 
 `@sct`
 ```{r}
+test_function("plot", args = c("x","y","type", "main","xlab","ylab","col","lwd"))
+test_function("lines", args = c("x","y","type", "col","lwd"))
+test_function("legend", args = c("x","y","legend","col","lwd"))
+
 success_msg("Well done. Now for the final leg of our first excursion through R's plotting capabilities ...")
 ```
 
@@ -368,5 +428,10 @@ abline(h = 0, lty = 2, col="gray")
 
 `@sct`
 ```{r}
+test_function("plot", args = c("x","y","type", "main","xlab","ylab","col","lwd"))
+test_function("lines", args = c("x","y","type", "col","lwd"))
+test_function("legend", args = c("x","y","legend","col","lwd"))
+test_function("abline", args = c("h","lty","col"))
+
 success_msg("Excellent! You have mastered the essentials of simple plots!")
 ```
