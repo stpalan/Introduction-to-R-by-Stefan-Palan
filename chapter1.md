@@ -160,7 +160,7 @@ success_msg("Very nice - this looks like a proper graph of a sine wave!")
 
 ```yaml
 type: NormalExercise
-key: 4429362060
+key: ff5056e463
 lang: r
 xp: 100
 skills: 1
@@ -252,7 +252,7 @@ success_msg("You did it!")
 
 ```yaml
 type: NormalExercise
-key: c740f8f7a3
+key: 7d19fda002
 lang: r
 xp: 100
 skills: 1
@@ -341,7 +341,7 @@ success_msg("Very good - now we are set to add a second plot to our graph!")
 
 ```yaml
 type: NormalExercise
-key: 9146d0b9e5
+key: 26e2cec999
 lang: r
 xp: 100
 skills: 1
