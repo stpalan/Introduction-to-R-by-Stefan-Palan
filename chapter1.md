@@ -48,13 +48,11 @@ plot(EvenNumbers)
 test_error()
 test_output_contains("EvenNumbers", incorrect_msg = "You have not displayed the contents of `EvenNumbers`. Make sure you do so under the first instruction.")
 test_function("plot", incorrect_msg = "You have forgotten to plot EvenNumbers!")
-success_msg("Excellent, your first R plot! R has taken the contents of `EvenNumbers` and plotted it on the vertical axis, using a simple index (running from 1 to 6, for the six numbers in `EvenNumbers`) for the horizontal axis.
-
-Now - despite this success, you are not happy with how the figure looks? Well, let's see about that in the next exercise ...")
+success_msg("Excellent, your first R plot! R has taken the contents of `EvenNumbers` and plotted it on the vertical axis, using a simple index (running from 1 to 6, for the six numbers in `EvenNumbers`) for the horizontal axis.")
 ```
 
 ---
-## Plotting a sine wave
+## Preparing a 'grid' for a plot
 
 ```yaml
 type: NormalExercise
@@ -66,15 +64,18 @@ skills: 1
 
 Now that you have whet your appetite with a first plot, let's plot something nicer to look at than six simple numbers. How about that sine wave you learnt about in highschool? Let's try to plot that!
 
-`@instructions`
-First we need to create the *grid*, i.e., the x-coordinates over which we are going to plot our function. We are going to do this by creating a variable `x` which we will fill by numbers incrementing from zero to two times pi (yes, the same pi we use to calculate the area of a circle). Why two times pi? Because that will give us one full sine wave. We do this by assigning to `x` the numbers 0, 0.1, 0.2, etc.
+To do that, we first need to create the *grid*, i.e., the x-coordinates over which we are going to plot our function. We are going to do this by creating a variable `x` which we will fill by numbers starting at 0 and incrementing by 0.1 in each step. This should give us enough resolution to get a smooth function plot.
 
-Once that is done, we can define `y` as the sine of `x` and plot the outcome.
+We will let `x` run from 0 to two times pi (yes, the same pi we use to calculate the area of a circle). Why two times pi? Because that will give us one full sine wave.
+
+`@instructions`
+Assign the numbers 0, 0.1, 0.2, ..., 2*pi to `x` .
 
 `@hint`
-First, calculate and save in `y` the sine of `x` by assigning the outcome of `sin(x)` to `y`.
+You can use the `seq()` function to generate a sequence of numbers. Specifying the `from`, `to`, and `by` arguments lets you control the starting point, end point, and step width of the sequence.
 
-Then, plot the outcome using `plot(x,y)`.
+`@hint`
+Use `seq(from = 0, by = 0.1, to = 2 * pi)` to generate a vector of values which you then assign to variable `x`.
 
 `@pre_exercise_code`
 ```{r}
@@ -84,12 +85,49 @@ Then, plot the outcome using `plot(x,y)`.
 `@sample_code`
 ```{r}
 # First we fill x by numbers running from 0 to two times pi in steps of 0.1.
+x <- 
+
+```
+
+`@solution`
+```{r}
 x <- seq(from = 0, by = 0.1, to = 2 * pi)
+```
 
-# Then, we calculate y as the sine of `x`, using the built-in function `sin()`.
+`@sct`
+```{r}
+test_function("seq", args = c("from", "to", "by"))
+success_msg("Good job, now we are ready to calculate the sine of `x`!")
+```
 
+---
+## Calculating the sine
 
-# Finally, we plot the result, sending both the x and the y variables to the `plot()` function. The first argument of the function (the first variable name there) will be interpreted as the x-coordinate, the second as the y-coordinate.
+```yaml
+type: NormalExercise
+key: 9476388da9
+lang: r
+xp: 100
+skills: 1
+```
+
+Now that you have prepared our `x` variable, it is time to calculate the sine of `x`.
+
+`@instructions`
+Calculate the sine of each value in `x` using the `sin()` function. Then assign the outcome to a variable called `y`.Assign to `x` the numbers 0, 0.1, 0.2, ..., 2*pi.
+
+`@hint`
+Calculate and save in `y` the outcome of `sin(x)`.
+
+`@pre_exercise_code`
+```{r}
+x <- seq(from = 0, by = 0.1, to = 2 * pi)
+```
+
+`@sample_code`
+```{r}
+# Calculate y as the sine of `x`, using the built-in function `sin()`.
+
 
 ```
 
@@ -97,17 +135,55 @@ x <- seq(from = 0, by = 0.1, to = 2 * pi)
 ```{r}
 x <- seq(from = 0, by = 0.1, to = 2 * pi)
 y <- sin(x)
-plot(x, y)
 ```
 
 `@sct`
 ```{r}
 test_function("sin", incorrect_msg = "You need to use the `sin()` function to calculate the sine of `x`!")
-#test_function("plot", incorrect_msg = "You need to use the `plot()` function to plot your sine wave!")
 test_object("y", incorrect_msg = "Something is wrong with `y`. Make sure you've assigned the sine of x to the variable.")
-test_function("plot", args = c("x", "y"))
-#test_output_contains("plot(x,y)", incorrect_msg = "You have not correctly plotted the sine wave. Make sure you specify both the `x` and the `y` coordinate in the `plot()` function.")
 success_msg("Good work! Your highschool teacher would be proud of you!")
+```
+
+---
+## Plotting the sine wave
+
+```yaml
+type: NormalExercise
+key: 9476388da9
+lang: r
+xp: 100
+skills: 1
+```
+
+Now that we have the `x` and `y` coordinates of our sine wave, let's actually plot it!
+
+`@instructions`
+Use the `plot()` function to plot the sine wave. The first two arguments of the function are the x and y coordinates (in this order) of whatever you want to plot.
+
+`@hint`
+# Plot the sine wave, sending both the x and the y variables to the `plot()` function. The first argument of the function (the first variable name within the brackets) will be interpreted as the x-coordinate, the second as the y-coordinate.
+
+`@pre_exercise_code`
+```{r}
+x <- seq(from = 0, by = 0.1, to = 2 * pi)
+y <- sin(x)
+```
+
+`@sample_code`
+```{r}
+# Plot the sine wave
+
+```
+
+`@solution`
+```{r}
+plot(x, y)
+```
+
+`@sct`
+```{r}
+test_function("plot", args = c("x", "y"))
+success_msg("Great - this *is* a sine wave!")
 ```
 
 ---
@@ -160,7 +236,7 @@ success_msg("Very nice - this looks like a proper graph of a sine wave!")
 
 ```yaml
 type: NormalExercise
-key: 805203aad4
+key: 4429362060
 lang: r
 xp: 100
 skills: 1
@@ -252,7 +328,7 @@ success_msg("You did it!")
 
 ```yaml
 type: NormalExercise
-key: 31caa642fd
+key: c740f8f7a3
 lang: r
 xp: 100
 skills: 1
@@ -341,7 +417,7 @@ success_msg("Very good - now we are set to add a second plot to our graph!")
 
 ```yaml
 type: NormalExercise
-key: 414bdb9daf
+key: 9146d0b9e5
 lang: r
 xp: 100
 skills: 1
