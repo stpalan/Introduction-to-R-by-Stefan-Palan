@@ -160,7 +160,7 @@ success_msg("Very nice - this looks like a proper graph of a sine wave!")
 
 ```yaml
 type: NormalExercise
-key: 4429362060
+key: 60e5b21d03
 lang: r
 xp: 100
 skills: 1
