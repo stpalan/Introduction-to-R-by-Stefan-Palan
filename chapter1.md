@@ -123,10 +123,10 @@ skills: 1
 
 While it is nice to see that sine function plot, nobody plots continuous functions using separate dots. Let's use a continuous line instead, why don't we?
 
-`@instructions`
-To change the appeareance of a plot, we can add *options* to the plot function call. These are additional parameters, telling R how to format the plot output.
+To change the appeareance of a plot, we can add *options* to the plot function call. These are additional parameters, telling R how to format the plot output. Here, we want R to format your data as a line instead of as individual dots. You do this by specifying the `type` parameter as `type="l"`. Note that this is a lower case "L" in the quotes, not the number "one". 
 
-Here, we want R to format your data as a line instead of as individual dots. You do this by specifying the `type` parameter as `type="l"`. Note that this is a lower case "L" in the quotes, not the number "one". I have already prepared this for you in the script window. Put your cursor into the first line of code and hit <CTRL>-<ENTER> to run this piece of code.
+`@instructions`
+I have already prepared this step for you in the script window. Simply run this piece of code.
 
 `@hint`
 The solution in this case is already prepared for you and you just need to submit it.
@@ -160,7 +160,7 @@ success_msg("Very nice - this looks like a proper graph of a sine wave!")
 
 ```yaml
 type: NormalExercise
-key: 75cfc0390a
+key: 4429362060
 lang: r
 xp: 100
 skills: 1
@@ -252,7 +252,7 @@ success_msg("You did it!")
 
 ```yaml
 type: NormalExercise
-key: 99388322e4
+key: c740f8f7a3
 lang: r
 xp: 100
 skills: 1
@@ -341,7 +341,7 @@ success_msg("Very good - now we are set to add a second plot to our graph!")
 
 ```yaml
 type: NormalExercise
-key: 685093352d
+key: 9146d0b9e5
 lang: r
 xp: 100
 skills: 1
