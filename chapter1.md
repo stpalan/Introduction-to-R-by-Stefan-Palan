@@ -74,9 +74,6 @@ Assign the numbers 0, 0.1, 0.2, ..., 2*pi to `x` .
 `@hint`
 You can use the `seq()` function to generate a sequence of numbers. Specifying the `from`, `to`, and `by` arguments lets you control the starting point, end point, and step width of the sequence.
 
-`@hint`
-Use `seq(from = 0, by = 0.1, to = 2 * pi)` to generate a vector of values which you then assign to variable `x`.
-
 `@pre_exercise_code`
 ```{r}
 
@@ -105,7 +102,7 @@ success_msg("Good job, now we are ready to calculate the sine of `x`!")
 
 ```yaml
 type: NormalExercise
-key: c1cac3b55a
+key: 9476388da9
 lang: r
 xp: 100
 skills: 1
@@ -149,7 +146,7 @@ success_msg("Good work! Your highschool teacher would be proud of you!")
 
 ```yaml
 type: NormalExercise
-key: ecffe088c7
+key: 9476388da9
 lang: r
 xp: 100
 skills: 1
@@ -236,7 +233,7 @@ success_msg("Very nice - this looks like a proper graph of a sine wave!")
 
 ```yaml
 type: NormalExercise
-key: bf0e9c7ad0
+key: 4429362060
 lang: r
 xp: 100
 skills: 1
@@ -328,7 +325,7 @@ success_msg("You did it!")
 
 ```yaml
 type: NormalExercise
-key: 78de01d9fc
+key: c740f8f7a3
 lang: r
 xp: 100
 skills: 1
@@ -417,7 +414,7 @@ success_msg("Very good - now we are set to add a second plot to our graph!")
 
 ```yaml
 type: NormalExercise
-key: bce6176f26
+key: 9146d0b9e5
 lang: r
 xp: 100
 skills: 1
