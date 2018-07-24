@@ -160,7 +160,7 @@ success_msg("Very nice - this looks like a proper graph of a sine wave!")
 
 ```yaml
 type: NormalExercise
-key: ff5056e463
+key: 4429362060
 lang: r
 xp: 100
 skills: 1
@@ -252,7 +252,7 @@ success_msg("You did it!")
 
 ```yaml
 type: NormalExercise
-key: 7d19fda002
+key: c740f8f7a3
 lang: r
 xp: 100
 skills: 1
@@ -341,7 +341,7 @@ success_msg("Very good - now we are set to add a second plot to our graph!")
 
 ```yaml
 type: NormalExercise
-key: 26e2cec999
+key: 9146d0b9e5
 lang: r
 xp: 100
 skills: 1
@@ -398,14 +398,14 @@ skills: 1
 Once you have more than one plot in your graph, it is good practice to use a legend to tell viewers what these plots show. So let's add a legend to our graph!
 
 `@instructions`
-Drawing a legend in R requires the use of the `legend()`function. Now this function requires multiple pieces of information to produce what we want it to.
+Drawing a legend in R requires the use of the `legend()`function. Now this function requires multiple pieces of information to produce what we want it to:
 
 1. Where we want the legend to go in the graph. We tell R by specifying the coordinates the upper left corner of the legend should be positioned. In this case: `legend(x=pi, y=1 ...`
 2. The labels of the different elements shown in the legend. In this case, our two functions, i.e.: `legend(x=pi, y=1, legend=c("sin(X)", "cos(X)") ...`. Note that we use the `c()` function to combine the two texts into a vector.
 3. The colors of the lines to be drawn. In this case: `legend(x=pi, y=1, legend=c("sin(X)", "cos(X)"), col=c("red", "blue") ...`
 4. The line width of the lines to be drawn. In this case: `legend(x=pi, y=1, legend=c("sin(X)", "cos(X)"), col=c("red", "blue"), lwd=4)`
 
-Phew, sounds a bit complicated, but you can always use this legend as a reference for future work.
+Phew, sounds a bit complicated. However, in future work you can simply take this legend as a template and modify it for your new requirements.
 
 *Note that here on datacamp, you always need to execute the entire plot-related code at once, since otherwise the later functions (`lines()`, `legend()`) do not have a plot to refer to. Thus, always highlight everything from `plot(...)` down to the line you are working on before pressing <CTRL>-<ENTER> to test your code.*
 
@@ -456,10 +456,10 @@ skills: 1
 
 As a final flourish, let's add a reference line at y = 0 to the plot.
 
-`@instructions`
-Using the `abline()` function lets you quickly draw horizontal or vertical reference lines. You can specify either version by using the `h = Y` or the `v = X` options, where `X` and `Y` stand for the x- and y- coordinate where the line should be positioned.
+Using the `abline()` function lets us quickly draw horizontal or vertical reference lines. We can specify either version by using the `h = Y` or the `v = X` options, where `X` and `Y` stand for the x- and y- coordinate where the line should be positioned. To make the line a little less prominent, we should also specify the line type by using `lty=2` and coloring it gray.
 
-To make the line a little less prominent, you can specify the line type by using `lty=2` and color it gray.
+`@instructions`
+Use the `abline()` function with the arguments `h`, `lty` and `col` to draw a gray, broken, horizontal line at y = 0.
 
 *Note that here on datacamp, you always need to execute the entire plot-related code at once, since otherwise the later functions (`lines()`, `legend()`, `abline()`) do not have a plot to refer to. Thus, always highlight everything from `plot(...)` down to the line you are working on before pressing <CTRL>-<ENTER> to test your code.*
 
