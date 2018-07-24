@@ -15,7 +15,6 @@ video_link: https://player.vimeo.com/video/281432673
 #vimeo.com/user87654438/review/281432673/f255f4ca14
 ```
 
-
 ---
 
 
@@ -66,6 +65,8 @@ test_output_contains("EvenNumbers", incorrect_msg = "You have not displayed the 
 test_function("plot", incorrect_msg = "You have forgotten to plot EvenNumbers!")
 success_msg("Excellent, your first R plot! R has taken the contents of `EvenNumbers` and plotted it on the vertical axis, using a simple index (running from 1 to 6, for the six numbers in `EvenNumbers`) for the horizontal axis.")
 ```
+
+---
 
 ## Preparing a 'grid' for a plot
 
